@@ -82,7 +82,7 @@ try {
 
     let deletedBlog = await BlogsModel.findOneAndUpdate({ _id : blogId } , { $set : {isDeleted : true , DeletedAt : new Date()}} , { new : true } )
 
-    res.status(200).send({ status : true , data : deletedBlog })
+    res.status(200).send({ status : true , msg : "Blog Deleted." })
 
 } catch (err) {
     res.status(500).send({ status : false , msg : err.message })
